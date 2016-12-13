@@ -1,0 +1,45 @@
+#################################################
+## Source Codes of CSMD1 Paper, Genome Biology ##
+#################################################
+1. Figures
+ This is where you would see the figure when you run the R codes explained below.
+
+2. Rscript
+ This is where the actual R codes are and the directory structure looks like this:
+
+2.0. Library files 
+ lib/local.R
+ lib/multiplot.R
+ lib/theme_publish.R
+2.1. R scripts for the main figures (Fig1-Fig6)
+ CSMD1.paper.figures.main.R
+ CSMD1.Fig1.R
+ CSMD1.Fig2.R
+ CSMD1.Fig3.R
+ CSMD1.Fig4.R
+ CSMD1.Fig5.R
+ CSMD1.Fig6.R
+2.2. R scripts for the supplementary figures
+ Suppl/CSMD1.Suppl.Fig3.CSMD1.DMR2.RoadMap.R
+ Suppl/CSMD1.Suppl.Fig4.canonical.promoter.PT.R
+ Suppl/CSMD1.Suppl.Fig6.putative.promoter.PT.R
+ Suppl/CSMD1.Suppl.Fig8.putative.promoter.RoadMap.R
+ Supp/CSMD1.Suppl.Fig9.fetal.embryo.pheatmap.R
+
+3. RData
+ This where the data/files are.
+ However following files were omimitted due to the size limit (>25Mb)	
+	436M Oct 20 12:35 PT.CG.dt.meth.region.RData
+	145M Dec  7 15:47 PT.CG.dt.merged.RData
+	88M Feb 24  2015 hg19ensGene.sqlite
+	42M Dec  7 16:16 rnb.meth.diff.PT.RData
+
+4. Track hub
+ To browse methylation & expression level we presented in the paper,
+ visit the linke shown below:
+ http://genome.ucsc.edu/cgi-bin/hgTracks?hubUrl=http://nectarmutation.org/static/TrackHub/CamObsGynaeHub.txt&org=human&db=hg19&position=chr8:2792000-3040000
+
+-----
+Sungsam Gong <sung@bio.cc; ssg29@cam.ac.uk>
+First created 8/Dec/2016
+Last modified 13/Dec/2016

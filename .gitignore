@@ -1,0 +1,12 @@
+#./*
+#!.gitignore
+#!./Rscript/*
+#!./Figures/*
+#!./TrackHub/CamObsGynaeHub.txt
+#!./TrackHub/genomes.txt
+#!./TrackHub/hg19/trackDb.txt
+TrackHub/*.bw
+RData/rnb.meth.diff.PT.RData
+RData/hg19ensGene.sqlite
+RData/PT.CG.dt.merged.RData
+RData/PT.CG.dt.meth.region.RData

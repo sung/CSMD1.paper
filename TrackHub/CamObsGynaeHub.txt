@@ -1,0 +1,8 @@
+hub CamObsGynae
+shortLabel Sex-specific DNA methyhlation in the human placenta
+longLabel Sex-specific DNA methylation and expression of the human placenta which is paort of POP Study from the department of obstetric and Gynaecology, University of Cambridge
+genomesFile genomes.txt
+email ssg29@cam.ac.uk
+
+## https://www.obgyn.cam.ac.uk/TrackHub/CamObsGynaeHub.txt 
+## http://genome.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://www.obgyn.cam.ac.uk/TrackHub/CamObsGynaeHub.txt&org=human&&db=hg19&position=chr8:2792000-3040000
