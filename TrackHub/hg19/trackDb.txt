@@ -9,20 +9,20 @@ group Expression
 shortLabel RNAseq_placenta 
 longLabel Merged RNA-seq from 76 male and 71 female full-term placenta samples from the department of Obstetric and Gynaecology, University of Cambridge, UK
 
-	track Female_placenta
+	track Female_RNAseq
 	parent RNAseq_placenta 
-	shortLabel Female_placenta 
+	shortLabel Female_RNAseq
 	type bigWig
 	longLabel Merged RNA-seq from 76 female full-term placenta (chronic villi) samples 
-	bigDataUrl https://www.obgyn.cam.ac.uk/TrackHub/hg19/PT.RNAseq.Female.GRCh37.bw
+	bigDataUrl PT.RNAseq.Female.hg19.bw
 	color 27,158,119
 
-	track Male_placenta
+	track Male_RNAseq
 	parent RNAseq_placenta 
-	shortLabel Male_placenta 
+	shortLabel Male_RNAseq
 	type bigWig
 	longLabel Merged RNA-seq from 71 male full-term placenta (chronic villi) samples 
-	bigDataUrl https://www.obgyn.cam.ac.uk/TrackHub/hg19/PT.RNAseq.Male.GRCh37.bw
+	bigDataUrl PT.RNAseq.Male.hg19.bw
 	color 217,95,2
 
 track WGoxBS_placenta
@@ -36,18 +36,18 @@ group Methylation
 shortLabel WGoxBS_placenta 
 longLabel Whole Genome Oxidative Bisulfite Sequencing (WGoxBS) from 2 male and 2 female full-term placenta samples from the department of Obstetric and Gynaecology, University of Cambridge, UK
 
-	track Female_placenta
+	track Female_WGoxBS
 	parent WGoxBS_placenta 
-	shortLabel Female_placenta 
+	shortLabel Female_WGoxBS
 	type bigWig
 	longLabel Whole Genome Oxidative Bisulfite Sequencing (WGoxBS) from 2 female full-term placenta (chronic villi) samples 
-	bigDataUrl https://www.obgyn.cam.ac.uk/TrackHub/hg19/PT.WGoxBS.Female.hg19.bw
+	bigDataUrl PT.WGoxBS.Female.hg19.bw
 	color 27,158,119
 
-	track Male_placenta
+	track Male_WGoxBS
 	parent WGoxBS_placenta 
-	shortLabel Male_placenta 
+	shortLabel Male_WGoxBS
 	type bigWig
 	longLabel Whole Genome Oxidative Bisulfite Sequencing (WGoxBS) from 2 male full-term placenta (chronic villi) samples 
-	bigDataUrl https://www.obgyn.cam.ac.uk/TrackHub/hg19/PT.WGoxBS.Male.hg19.bw
+	bigDataUrl PT.WGoxBS.Male.hg19.bw
 	color 217,95,2
