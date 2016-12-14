@@ -5,4 +5,5 @@ genomesFile genomes.txt
 email ssg29@cam.ac.uk
 
 ## https://www.obgyn.cam.ac.uk/TrackHub/CamObsGynaeHub.txt 
-## http://genome.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://www.obgyn.cam.ac.uk/TrackHub/CamObsGynaeHub.txt&org=human&&db=hg19&position=chr8:2792000-3040000
+## http://genome.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://www.obgyn.cam.ac.uk/TrackHub/CamObsGynaeHub.txt&org=human&db=hg19&position=chr8:2792000-3040000
+## http://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://www.obgyn.cam.ac.uk/TrackHub/CamObsGynaeHub.txt&org=human&db=hg19&position=chr8:2792000-3040000
