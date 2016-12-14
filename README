@@ -37,7 +37,10 @@
 4. Track hub
  To browse methylation & expression level we presented in the paper,
  visit the linke shown below:
- http://genome.ucsc.edu/cgi-bin/hgTracks?hubUrl=http://nectarmutation.org/static/TrackHub/CamObsGynaeHub.txt&org=human&db=hg19&position=chr8:2792000-3040000
+ http://genome.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://www.obgyn.cam.ac.uk/TrackHub/CamObsGynaeHub.txt&org=human&db=hg19&position=chr8:2792000-3040000
+
+ or,
+ http://genome-euro.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://www.obgyn.cam.ac.uk/TrackHub/CamObsGynaeHub.txt&org=human&db=hg19&position=chr8:2792000-3040000
 
 -----
 Sungsam Gong <sung@bio.cc; ssg29@cam.ac.uk>
