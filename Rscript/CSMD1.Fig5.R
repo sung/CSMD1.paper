@@ -49,5 +49,5 @@ p.rna.cov<-ggplot(dt.rna.cov[score!=0], aes(xmin=start, xmax=end, ymin=0, ymax=s
 
 my.file.name<-"../Figures/CSMD1.Meth.Exp.profile/Fig.CSMD1.methy.exp.profile.tiff"
 tiff(filename=my.file.name,width=15, height=8.5 ,units="in",res=300, compression = 'lzw') #A4 size 
-print(tracks(`CSMD1`=p.tr.reduced, `oxBS-Seq`=p.pt.meth, `RNA-Seq`=p.rna.cov, heights = c(1.2,3.5,7), scale.height=2.5, label.text.cex = 1.3, xlim=gr.csmd.ext))
+print(tracks(`CSMD1`=p.tr.reduced, `WGoxBS (n=4)`=p.pt.meth, `RNA-Seq`=p.rna.cov, heights = c(1.2,3.5,7), scale.height=2.5, label.text.cex = 1.3, xlim=gr.csmd.ext))
 dev.off()
