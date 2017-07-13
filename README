@@ -1,6 +1,6 @@
-##################################################
-## Source Codes of CSMD1 Paper, Genome Research ##
-##################################################
+#####################################
+## Source Codes of the CSMD1 Paper ##
+#####################################
 1. Figures
  This is where you would see the figure when you run the R codes explained below.
 
@@ -28,7 +28,7 @@
 
 3. RData
  This where the data/files are.
- However following files were omimitted due to the size limit (>25Mb)	
+ However following files were omimitted due to the size limit (>25Mb)
 	436M Oct 20 12:35 PT.CG.dt.meth.region.RData
 	145M Dec  7 15:47 PT.CG.dt.merged.RData
 	88M Feb 24  2015 hg19ensGene.sqlite
@@ -52,4 +52,4 @@
 -----
 Sungsam Gong <sung@bio.cc; ssg29@cam.ac.uk>
 First created 8/Dec/2016
-Last modified 07/Feb/2016
+Last modified 13/Jul/2017
