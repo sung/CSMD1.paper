@@ -27,16 +27,16 @@
  Suppl/CSMD1.Suppl.Fig9.fetal.embryo.pheatmap.R
 
 3. RData
- This where the data/files are.
+ This is where the data/files are.
  However following files were omimitted due to the size limit (>25Mb)
-	436M Oct 20 12:35 PT.CG.dt.meth.region.RData
-	145M Dec  7 15:47 PT.CG.dt.merged.RData
-	88M Feb 24  2015 hg19ensGene.sqlite
-	42M Dec  7 16:16 rnb.meth.diff.PT.RData
+	436M PT.CG.dt.meth.region.RData
+	145M PT.CG.dt.merged.RData
+	 88M hg19ensGene.sqlite
+	 42M rnb.meth.diff.PT.RData
 
 4. Track hub
  To browse methylation & expression level we presented in the paper,
- visit the linke shown below:
+ visit the links shown below:
  http://genome.ucsc.edu/cgi-bin/hgTracks?hubUrl=https://www.obgyn.cam.ac.uk/TrackHub/CamObsGynaeHub.txt&org=human&db=hg19&position=chr8:2792000-3040000
 
  or,
