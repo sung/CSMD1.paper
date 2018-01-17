@@ -1,0 +1,11 @@
+# 4500*2500 + 4500*1500
+convert  ~/results/CSMD1.2016.paper/Figures/Fig.CSMD1.methy.exp.profile.4800.2000.tiff ~/results/CSMD1.2016.paper/Figures/Pheatmap.exon/Fig.pheatmap.exon.pops.roadmap.GRCh37.hr.tiff -append ~/results/CSMD1.2016.paper/Figures/Fig.CSMD1.meth.exp.pheatmap.tiff
+convert ~/results/CSMD1.2016.paper/Figures/Fig.CSMD1.meth.exp.pheatmap.tiff -font "Arial" -pointsize 95 -gravity northeast -annotate +30+30 'A' -gravity east -annotate +30+400 'B' ~/results/CSMD1.2016.paper/Figures/Fig.CSMD1.meth.exp.pheatmap.label.tiff
+
+# 4500*1500 + 4500*1500
+convert  ~/results/CSMD1.2016.paper/Figures/Fig.CSMD1.methy.exp.profile.4800.1500.tiff ~/results/CSMD1.2016.paper/Figures/Pheatmap.exon/Fig.pheatmap.exon.pops.roadmap.GRCh37.hr.tiff -append ~/results/CSMD1.2016.paper/Figures/Fig.CSMD1.meth.exp.pheatmap.3000.tiff
+convert ~/results/CSMD1.2016.paper/Figures/Fig.CSMD1.meth.exp.pheatmap.3000.tiff -font "Arial" -pointsize 95 -gravity northeast -annotate +30+30 'A' -gravity east -annotate +30+400 'B' ~/results/CSMD1.2016.paper/Figures/Fig.CSMD1.meth.exp.pheatmap.label.3000.tiff
+
+# 3000*2400 + 3000*2400
+convert  ~/results/CSMD1.2016.paper/Figures/Meth.diff/Meth.diff.Boxplot.chrX.autosome.PT.2017-05-31_02_53_PM.tiff ~/results/CSMD1.2016.paper/Figures/Beta.dist/Fig1.PT.CG.2017-05-31_02_53_PM.line.chrX.tiff +append ~/results/CSMD1.2016.paper/Figures/Beta.dist/PT.CG.meth.diff.boxplot.beta.tiff
+
