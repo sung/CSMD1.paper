@@ -5,7 +5,7 @@
 #!./TrackHub/CamObsGynaeHub.txt
 #!./TrackHub/genomes.txt
 #!./TrackHub/hg19/trackDb.txt
-TrackHub/*.bw
+TrackHub/hg19/*.bw
 RData/rnb.meth.diff.PT.RData
 RData/hg19ensGene.sqlite
 RData/PT.CG.dt.merged.RData
