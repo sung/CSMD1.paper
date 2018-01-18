@@ -35,16 +35,19 @@ cbPalette2 <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2"
 
 my.col=list(
 	`Sex`=c(`M`="#D95F02", `F`="#1B9E77"), # orange/green (RnBeads default) for RNA-Seq data
-	`Gender`=c(`Male`="#D95F02", `Female`="#1B9E77"), # orange/green (RnBeads default) for RoadMap via ggplot
+	`Gender`=c(`Male`="#D95F02", `Female`="#1B9E77", `NA`="#999999"), # orange/green (RnBeads default) for RoadMap via ggplot
+	`Source`=c(`Male`="#D95F02", `Female`="#1B9E77",`Placenta`="#000000",`Hippocampus`="#E69F00") # orange/green (RnBeads default) for RoadMap via ggplot
 )
 
 my.cpg.type="CG" # CG, CHH, CHG
 my.tissue="PT" # short for placenta
 min.doc <- 10 # minimum depth of coverage
 my.ensg='ENSG00000183117' # CSMD1
-my.first.exon_id="ENSE00002127078" # the first exon at the putative TSS
+my.pt.exon_id="ENSE00002127078" # the first exon at the putative TSS
+my.canon.exon_id="ENSE00002108991" # the first exon at the canonical TSS
 
 gr.csmd<-import("../RData/Homo_sapiens.GRCh37.75.CSMD1.exon.union.sorted.ucsc.gtf") # ucsc style (e.g. chr8)
+names(gr.csmd)<-mcols(gr.csmd)$exon_id
 gr.csmd.ext<-promoters(range(reduce(gr.csmd)), upstream=1000, downstream=end(range(reduce(gr.csmd)))-start(range(reduce(gr.csmd)))+1+1000) # includes 1kb +TSS and 1kb +TES 
 
 # UCSC-style (e.g. chr8)

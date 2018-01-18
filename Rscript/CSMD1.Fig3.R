@@ -70,27 +70,29 @@
 	file.name<-file.path("../Figures/Manhattan",paste("Fig3.manhattan",time.stamp,"ALL.tiff",sep="."))
 	tiff(filename=file.name,width=10, height=8,units="in",res=300, compression = 'lzw') #A4 size 
 
-	par(mfrow=c(2,2), mar=c(2,4.5,4,1))
-	manhattan(p.tiling5k, p="RANK", logp=FALSE, ylab="Rank", xlab="", genomewideline=FALSE, suggestiveline=FALSE, highlight=top.diff.met, chrlabs=c(1:22, "X"), font.lab=2,  ylim=c(0,9), cex=1.5, cex.main=1.8, cex.lab=1.5, cex.axis=.8, yaxt='n') 
+	par(mfrow=c(2,2))
+	par(mar=c(4,4.5,4,1))
+	manhattan(p.tiling5k, p="RANK", logp=FALSE, ylab="Rank", xlab="", genomewideline=FALSE, suggestiveline=FALSE, highlight=top.diff.met, chrlabs=c(1:22, "X"), main="5Kbp tiles", font.lab=2,  ylim=c(0,9), cex=1.5, cex.main=1.8, cex.lab=1.5, cex.axis=.8, yaxt='n') 
 	abline(h=t100.tiling) 
 	# https://gist.github.com/cboettig/709578
-	mtext("A", side=3, adj=0, line=1.2, cex=1.5, font=2) # font=2 to bold face
-	axis(2, at=seq(0,9))
+	mtext("A", side=3, adj=0, line=1.2, cex=1.8, font=2) # side = 3 means top margin; adj = 0 means left align; line= 1.2 moves the text up; font=2 to bold face
+	axis(2, at=seq(0,9), las=1)
 
-	par(mar=c(2,4.5,4,1))
-	mtext(adj=0)
-	manhattan(p.genes, p="RANK", logp=FALSE, ylab="", xlab="", genomewideline=FALSE, suggestiveline=FALSE, chrlabs=c(1:22, "X"), font.lab=2, ylim=c(0,5), cex=1.5, cex.main=1.8, cex.lab=1.5, cex.axis=.8) 
+	par(mar=c(4,4.5,4,1))
+	#mtext(adj=0)
+	manhattan(p.genes, p="RANK", logp=FALSE, ylab="", xlab="", genomewideline=FALSE, suggestiveline=FALSE, chrlabs=c(1:22, "X"), main="Gene-bodies", font.lab=2, ylim=c(0,5), cex=1.5, cex.main=1.8, cex.lab=1.5, cex.axis=.8) 
 	abline(h=t100.genes)
-	mtext("B", side=3, adj=0, line=1.2, cex=1.5, font=2)
+	mtext("B", side=3, adj=0, line=1.2, cex=1.8, font=2)
 
 	par(mar=c(4,4.5,4,1))
-	manhattan(p.promoters, p="RANK", logp=FALSE, ylab="Rank", genomewideline=FALSE, suggestiveline=FALSE, chrlabs=c(1:22, "X"), font.lab=2, ylim=c(0,7), cex=1.5, cex.main=1.8, cex.lab=1.5, cex.axis=.8) 
+	manhattan(p.promoters, p="RANK", logp=FALSE, ylab="Rank", genomewideline=FALSE, suggestiveline=FALSE, chrlabs=c(1:22, "X"), main="Promoters", font.lab=2, ylim=c(0,7), cex=1.5, cex.main=1.8, cex.lab=1.5, cex.axis=.8) 
 	abline(h=t100.promoters)
-	mtext("C", side=3, adj=0, line=1.2, cex=1.5, font=2)
+	mtext("C", side=3, adj=0, line=1.2, cex=1.8, font=2)
 
 	par(mar=c(4,4.5,4,1))
-	manhattan(p.cpgislands, p="RANK", logp=FALSE, ylab="", genomewideline=FALSE, suggestiveline=FALSE, chrlabs=c(1:22, "X"), font.lab=2, ylim=c(0,8), cex=1.5, cex.main=1.8, cex.lab=1.5, cex.axis=.8) 
+	manhattan(p.cpgislands, p="RANK", logp=FALSE, ylab="", genomewideline=FALSE, suggestiveline=FALSE, chrlabs=c(1:22, "X"), main="CpG islands", font.lab=2, ylim=c(0,8), cex=1.5, cex.main=1.8, cex.lab=1.5, cex.axis=.8, yaxt='n') 
 	abline(h=t100.cpgislands)
-	mtext("D", side=3, adj=0, line=1.2, cex=1.5, font=2)
+	mtext("D", side=3, adj=0, line=1.2, cex=1.8, font=2)
+	axis(2, at=seq(0,8), las=1) # las=1: text horizontal 
 	dev.off()
 

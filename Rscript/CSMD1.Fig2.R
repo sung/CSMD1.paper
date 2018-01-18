@@ -11,53 +11,23 @@
 	#######################
 	## Figure 2          ##
 	## Meth Diff Boxplot ##
-	## via plot_grid     ##
 	#######################
-	library("cowplot")
-	dt.meth=dt.meth.region[Tissue==my.tissue & Region=="Sites"]
-	dt.meth.dcast.site=dcast(dt.meth, chr+strand+start+end~Gender, value.var="meth") # dcast: row(long) to column(wide)
-	p.site.box<-ggplot(dt.meth.dcast.site, aes(chr, (Female-Male)*100)) + 
-				geom_boxplot(outlier.shape=NA) + 
-				labs(x="",y="% Methylation Difference\n   (more in male)     (more in female)") + 
+	dt.meth<-dt.meth.region[Tissue==my.tissue & Region %in% c("Sites","Genes","Promo_15.05","CPGi")]
+	dt.meth[,`Chromosome Type`:=ifelse(chr=="X",'X-chromosome','Autosomes')]
+	dt.meth.gender=data.table(dcast(dt.meth[Tissue==my.tissue], `Chromosome Type`+Region+chr+strand+start+end~Gender, value.var="meth")) 
+	p.box<-ggplot(dt.meth.gender, aes(Region, (Female-Male)*100)) + 
+				geom_boxplot(aes(fill=`Chromosome Type`), outlier.shape=NA, alpha=.7, size=1.3, width=.5) + 
+				labs(x="Genomic Regions",y="              % Methylation Difference\n                 (more in male)                        (more in female)") + 
 				geom_hline(yintercept=0) + geom_vline(xintercept=0) + 
-				ylim(c(-50,50)) +
-				scale_x_discrete(limits=my.chr.order) +
-				theme_Publication()
-
-	dt.meth=dt.meth.region[Tissue==my.tissue & Region=="Genes"]
-	min.cpg.gene<-quantile(dt.meth[,num.sites], .25) # No. of CpG at 25%-percentile # min.cpg: 6
-	dt.meth.dcast.gene=dcast(dt.meth, chr+strand+start+end~Gender, value.var="meth") # dcast: row(long) to column(wide)
-	p.gene.box<-ggplot(dt.meth.dcast.gene, aes(chr, (Female-Male)*100)) + 
-				geom_boxplot(outlier.shape=NA) + 
-				labs(x="", y="") + 
-				geom_hline(yintercept=0) + geom_vline(xintercept=0) + 
-				ylim(c(-50,50)) +
-				scale_x_discrete(limits=my.chr.order) +
-				theme_Publication()
-
-	dt.meth=dt.meth.region[Tissue==my.tissue & Region=="Promo_15.05"]
-	min.cpg.promo<-quantile(dt.meth[,num.sites], .25) # No. of CpG at 25%-percentile # min.cpg: 4
-	dt.meth.dcast.promo=dcast(dt.meth, chr+strand+start+end~Gender, value.var="meth") # dcast: row(long) to column(wide)
-	p.promoter.box<-ggplot(dt.meth.dcast.promo, aes(chr, (Female-Male)*100)) + 
-					geom_boxplot(outlier.shape=NA) + 
-					labs(x="Chromosome",y="% Methylation Difference\n   (more in male)     (more in female)") + 
-					geom_hline(yintercept=0) + geom_vline(xintercept=0) + 
-					ylim(c(-50,50)) +
-					scale_x_discrete(limits=my.chr.order) +
-					theme_Publication()
-
-	dt.meth=dt.meth.region[Tissue==my.tissue & Region=="CPGi"]
-	min.cpg.cpgi<-quantile(dt.meth[,num.sites], .25) # No. of CpG at 25%-percentile # min.cpg: 28
-	dt.meth.dcast.cpgi=dcast(dt.meth, chr+strand+start+end~Gender, value.var="meth") # dcast: row(long) to column(wide)
-	p.cpgi.box<-ggplot(dt.meth.dcast.cpgi, aes(chr, (Female-Male)*100)) + 
-					geom_boxplot(outlier.shape=NA) + 
-					labs(x="Chromosome", y="") + 
-					geom_hline(yintercept=0) + geom_vline(xintercept=0) + 
-					ylim(c(-50,50)) +
-					scale_x_discrete(limits=my.chr.order) +
-					theme_Publication()
+				#ylim(c(-50,50)) +
+				coord_cartesian(ylim=c(-60, 40)) + # zoom-in this range, rather than limiting (http://www.cookbook-r.com/Graphs/Axes_(ggplot2)/)
+				scale_y_continuous(breaks=seq(from=-60,to=40,by=10)) +
+				scale_x_discrete(limits=c("Sites","Genes","Promo_15.05","CPGi"),labels=c("CpG sites","Gene-bodies","Promoters","CpG islands")) +
+				scale_fill_manual(values=my.col[["Chromosome Types"]]) +
+				theme_Publication() +
+				theme(legend.position=c(0.87,0.91), plot.title = element_text(hjust = 0, size = 15,face="bold"))
 
 	file.name<-file.path("../Figures/Meth.diff",paste("Fig2",my.tissue,my.cpg.type,time.stamp,"tiff",sep="."))
-	tiff(filename=file.name,width=14, height=10,units="in",res=300, compression = 'lzw') #A4 size 
-	cowplot::plot_grid(p.site.box, p.gene.box, p.promoter.box, p.cpgi.box, labels=c("A","B","C","D"), label_size=15, ncol = 2, nrow = 2)
+	tiff(filename=file.name,width=10, height=8,units="in",res=300, compression = 'lzw') #A4 size 
+	print(p.box)
 	dev.off()
